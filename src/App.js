@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { useTranslation  } from 'react-i18next';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [active , setActive] = useState('en')
+    const { t ,  i18n} = useTranslation()
+     const lngs = {
+        en:{lngName:"Engilish"},
+        uz:{lngName:"Uzbek"},
+        ru:{lngName:"Russcha"}
+     }
+
+    return (
+        <div>
+            {
+                Object.keys(lngs).map((lng) => (
+                <button 
+                key={lng}
+                onClick={() => {
+                    i18n.changeLanguage(lng)
+                    setActive(lng)
+                }}
+                disabled={i18n.reloadResources === lng}
+                className={` default ${(active === lng)? "active" : ""}`}
+                >{lngs[lng].lngName}</button>
+                ))
+            }
+            <h1>
+                {t('dunyo')}
+            </h1>
+        </div>
+    )
 }
 
-export default App;
+export default App
