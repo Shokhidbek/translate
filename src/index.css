@@ -1,11 +1,10 @@
-
 .default{
     border: none;
     padding: 10px 15px;
     color: green;
     background-color: #fff;
     border: 1.5px solid green;
-    margin: 10px;
+    margin: 10px; 
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
@@ -16,4 +15,5 @@
     color:white;
     background-color: green;
     border: 1.5px solid green;
+    
 }

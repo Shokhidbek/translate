@@ -9,17 +9,20 @@ i18n
     resources: {
       en: {
         translation: {
-          "dunyo": "Hello World!"
+          "dunyo": "Hello World!",
+          "someText":"Hello"
         }
       },
       uz: {
         translation: {
-          "dunyo": "Salom Dunyo!"
+          "dunyo": "Salom Dunyo!",
+          "someText":"Salom"
         }
       },
       ru: {
         translation: {
-          "dunyo": "Привет мир!"
+          "dunyo": "Привет мир!",
+          "someText":"Привет"
         }
       },
     },

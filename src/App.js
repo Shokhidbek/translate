@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { useTranslation  } from 'react-i18next';
+import {Button} from '@mui/material'
+
+
 
 const App = () => {
-    const [active , setActive] = useState('en')
+    const [active , setActive] = useState('ru')
     const { t ,  i18n} = useTranslation()
      const lngs = {
         en:{lngName:"Engilish"},
@@ -28,6 +31,22 @@ const App = () => {
             <h1>
                 {t('dunyo')}
             </h1>
+            <h1>
+                {t('dunyo')}
+            </h1>
+            <h1>
+                {t('dunyo')}
+            </h1>
+            <h1>
+                {t('dunyo')}
+            </h1>
+            <p>
+                {t('someText')}
+            </p>
+
+            <Button className={``} variant='outlined' color={`${active === 'ru' ? "success" : "primary"}`}>
+                Hello
+            </Button>
         </div>
     )
 }
